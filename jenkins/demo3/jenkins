@@ -1,0 +1,66 @@
+pipeline {
+
+  environment {
+    dockerimagename = "mijnimage"
+    dockerapp = "mijnapp"
+    dockerImage = ""
+  }
+
+  agent any
+
+  stages {
+
+    stage('Active dockers') {
+      steps {
+          sh "docker container ls -a --filter 'ancestor=mijnimage'"
+//          sh "docker container rm -f \$(docker container ls -aq --filter 'ancestor=mijnimage')"
+//        sh "docker container ls -a --filter 'ancestor=mijnimage'"
+//        sh "docker rmi $(docker images -q)"
+      }
+    }
+
+    stage('Oppoetsen') {
+       steps {
+        script {
+            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                sh "docker container rm -f \$(docker container ls -aq --filter 'ancestor=mijnimage')"
+                }
+            }
+        }
+    }
+
+    stage('Checkout Source') {
+      steps {
+        git 'https://github.com/BartTho/les-devops.git'
+      }
+    }
+
+    stage('Kopie dockerfile naar root folder') {
+      steps {
+          sh 'cp jenkins/demo3/dockerfile .'
+      }
+    }         
+
+    stage('Build image') {
+      steps{
+        script {
+          dockerImage = docker.build dockerimagename
+        }
+      }
+    }
+    
+    stage('show all image') {
+      steps{
+        sh "docker images"
+      }
+    }
+    
+    stage('run image') {
+      steps{
+        script {
+          dockerImage.run('-p 80:80')
+        }
+      }
+    }
+  }
+}
