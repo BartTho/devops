@@ -1,2 +1,3 @@
-for i = 1 to 10
-   print("Hello world")
+mytuple = ("apple", "banana", "cherry")
+for x in mytuple:
+  print(x)
