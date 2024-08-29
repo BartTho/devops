@@ -1,4 +1,4 @@
-hosts: tmVirtueel
+hosts: all
 tasks:
   - name: Ping all de VM's
     ansible.builtin.ping:
