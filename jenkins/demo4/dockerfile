@@ -1,6 +1,6 @@
 FROM nginx:latest
 RUN apt update
 RUN apt upgrade -y
-RUN apt install unzip
+RUN apt install tar
 COPY jenkins/demo4/site.tar .
 RUN tar -xvf site.tar -D /usr/share/nginx/html/
