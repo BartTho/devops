@@ -20,7 +20,14 @@ pipeline {
       steps {
 //        ansiblePlaybook credentialsId: "${credentialsId}", installation: 'Ansible', inventory: "${inventory}", playbook: "${playbook}", vaultTmpPath: ''
 //          ansiblePlaybook inventory: "${inventory}", playbook: "${playbook}"
-          sh "ansible-playbook '${playbook}' -b -K -u bart -i '${inventory}'"
+//          sh "ansible-playbook '${playbook}' -b -K -u bart -i '${inventory}'"
+          ansiColor('xterm') {
+            ansiblePlaybook(
+              playbook: '${playbook}',
+              inventory: '${inventory}',
+              credentialsId: '${credentialsId}',
+              colorized: true)
+          }
       }
     }
   }
