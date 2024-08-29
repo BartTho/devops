@@ -10,6 +10,7 @@ tasks:
       group: root
       mode: 0644
   - name: backup group
+    copy:
       src: /etc/group
       dest: /etc/group.bak
       owner: root
