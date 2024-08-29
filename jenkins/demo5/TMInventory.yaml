@@ -1,3 +1,8 @@
-tmVirtueel:
-   hosts:
-      ansible_host: 192.168.3.31
+all:
+   children:
+      managed:
+        hosts:
+          192.168.3.31:
+      unmanaged:
+        hosts:
+          192.168.3.30:
