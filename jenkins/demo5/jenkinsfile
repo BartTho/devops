@@ -25,8 +25,7 @@ pipeline {
             ansiblePlaybook(
               playbook: '${playbook}',
               inventory: '${inventory}',
-              credentialsId: '${credentialsId}',
-              colorized: true)
+              credentialsId: '${credentialsId}')
           }
       }
     }
