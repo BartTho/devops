@@ -18,7 +18,7 @@ pipeline {
     
     stage('Hello') {
       steps {
-        ansiblePlaybook credentialsId: "${credentialsId}", installation: 'Ansible', inventory: "${inventory}", playbook: ${playbook}, vaultTmpPath: ''
+        ansiblePlaybook credentialsId: "${credentialsId}", installation: 'Ansible', inventory: "${inventory}", playbook: "${playbook}", vaultTmpPath: ''
       }
     }
   }
