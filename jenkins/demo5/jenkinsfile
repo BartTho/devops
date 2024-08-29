@@ -1,10 +1,11 @@
 pipeline {
+
   environment {
-
+        credentialsId =  "9aa6f707-128e-43a7-93d6-5db17509763d"
+        inventory = "TMInventory.yaml"
+        playbook = "TMPlaybook.yaml"
   }
-
   agent any
-
   stages {
 
     stage('Checkout Source') {
