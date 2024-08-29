@@ -19,8 +19,8 @@ pipeline {
     stage('Hello') {
       steps {
 //        ansiblePlaybook credentialsId: "${credentialsId}", installation: 'Ansible', inventory: "${inventory}", playbook: "${playbook}", vaultTmpPath: ''
-//          ansiblePlaybook credentialsId: "${credentialsId}", inventory: "${inventory}", playbook: "${playbook}"
-          sh "ansible-playbook TMPlaybook.yaml -b -K -u bart -i TMInventory.yaml"
+//          ansiblePlaybook inventory: "${inventory}", playbook: "${playbook}"
+          sh "ansible-playbook '${playbook}' -b -K -u bart -i '${inventory}'"
       }
     }
   }
