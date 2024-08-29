@@ -2,8 +2,8 @@ pipeline {
 
   environment {
         credentialsId =  "9aa6f707-128e-43a7-93d6-5db17509763d"
-        inventory = "TMInventory.yaml"
-        playbook = "TMPlaybook.yaml"
+        inventory = "jenkins/demo5/TMInventory.yaml"
+        playbook = "jenkins/demo5/TMPlaybook.yaml"
   }
 
   agent any
@@ -18,7 +18,7 @@ pipeline {
     
     stage('Hello') {
       steps {
-        ansiblePlaybook credentialsId: '9aa6f707-128e-43a7-93d6-5db17509763d', installation: 'Ansible', inventory: 'TMInventory.yaml', playbook: 'TMPlaybook.yaml', vaultTmpPath: ''
+        ansiblePlaybook credentialsId: ${credentialsId}, installation: 'Ansible', inventory: ${inventory}, playbook: ${playbook}, vaultTmpPath: ''
       }
     }
   }
