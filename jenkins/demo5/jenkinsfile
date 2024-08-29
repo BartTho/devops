@@ -15,13 +15,5 @@ pipeline {
         git 'https://github.com/BartTho/les-devops.git'
       }
     }
-
-    stages {
-        stage('Hello') {
-            steps {
-                ansiblePlaybook credentialsId: '9aa6f707-128e-43a7-93d6-5db17509763d', installation: 'Ansible', inventory: 'TMInventory.yaml', playbook: 'TMPlaybook.yaml', vaultTmpPath: ''
-            }
-        }
-    }
   }
 }
