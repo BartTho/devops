@@ -1,0 +1,17 @@
+hosts: tmVirtueel
+tasks:
+  - name: Ping all de VM's
+    ansible.builtin.ping:
+  - name: backup passwd en group
+    copy:
+      src: /etc/passwd 
+      dest: /etc/passwd.bak
+      owner: root
+      group: root
+      mode: 0644
+  - name: backup group
+      src: /etc/group
+      dest: /etc/group.bak
+      owner: root
+      group: root
+      mode: 0644
