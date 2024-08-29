@@ -1,4 +1,6 @@
 FROM nginx:latest
-RUN sudo apt install unzip
+RUN apt update
+RUN apt upgrade -y
+RUN apt install unzip
 COPY jenkins/demo4/Archief.zip /usr/share/nginx/html/
 RUN unzip /usr/share/nginx/html/Archief.zip
