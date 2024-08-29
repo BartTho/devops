@@ -1,9 +1,4 @@
 ---
 tmservers:
-   children:
-      managed:
-        hosts:
-          192.168.3.31:
-      unmanaged:
-        hosts:
-          192.168.3.30:
+  hosts:
+    192.168.3.31:
