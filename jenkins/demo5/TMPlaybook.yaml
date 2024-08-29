@@ -1,5 +1,8 @@
-hosts: all
-tasks:
+---
+- name: Update servers
+  hosts: tmservers
+  remote_user: root
+  tasks:
   - name: Ping all de VM's
     ansible.builtin.ping:
   - name: backup passwd en group

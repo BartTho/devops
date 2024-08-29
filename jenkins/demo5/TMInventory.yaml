@@ -1,4 +1,5 @@
-all:
+---
+tmservers:
    children:
       managed:
         hosts:
