@@ -1,2 +1,4 @@
 FROM nginx:latest
-COPY jenkins/demo4/site/* /usr/share/nginx/html/
+RUN sudo apt install unzip
+COPY jenkins/demo4/Archief.zip /usr/share/nginx/html/
+RUN unzip /usr/share/nginx/html/Archief.zip
