@@ -1,0 +1,4 @@
+[linux]
+devops-ubuntu ansible_host=192.168.2.210 ansible_user=bart ansible_password=Top.Secret
+[windows]
+windows ansible_host=192.168.2.211 ansible_user=ansibleuser ansible_password=password123 ansible_connection=winrm ansible_winrm_transport=ntlm
