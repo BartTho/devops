@@ -2,10 +2,10 @@
 - hosts: all
   become: true
   tasks:
-- name: Copy file with owner and permissions
-  ansible.builtin.copy:
-    src: data/gegevens.txt
-    dest: /home/bart/gegevens1.txt
-    owner: bart
-    group: bart
-    mode: '0644'
+  - name: Copy file with owner and permissions
+    ansible.builtin.copy:
+      src: data/gegevens.txt
+      dest: /home/bart/gegevens1.txt
+      owner: bart
+      group: bart
+      mode: '0644'
