@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  pre_tasks:
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: data/gegevens.txt
+    dest: /home/bart/gegevens1.txt
+    owner: bart
+    group: bart
+    mode: '0644'
+- name: Another symbolic mode example, adding some permissions and removing others
+  ansible.builtin.copy:
+    src: data/gegevens.txt
+    dest: /home/bart/gegevens2.txt
+    owner: root
+    group: root
+    mode: u+rw,g-wx,o-rwx
