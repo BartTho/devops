@@ -2,7 +2,6 @@
 - hosts: all
   become: true
   tasks:
-# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html
 - name: Copy file with owner and permissions
   ansible.builtin.copy:
     src: data/gegevens.txt
