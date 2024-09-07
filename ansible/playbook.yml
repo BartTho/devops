@@ -1,5 +1,5 @@
 ---
-- hosts: devops-ubuntu
+- hosts: all
   gather_facts: no
   tasks:
     - name: Copy file to remote host
