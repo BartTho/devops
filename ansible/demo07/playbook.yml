@@ -11,8 +11,8 @@
       mode: '0755'
   - name: Kopieer script2.py bestand en stel de rechten in
     ansible.builtin.copy:
-      src: script/backup.py
-      dest: /home/bart/backup.py
+      src: script/backup.sh
+      dest: /home/bart/backup.sh
       mode: u+rwx,g+x,o+x
   - name: Aanmaken directory
     ansible.builtin.file:
