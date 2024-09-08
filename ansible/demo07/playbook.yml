@@ -16,8 +16,11 @@
       mode: u+rwx,g+x,o+x
   - name: Aanmaken directory
     ansible.builtin.file:
-      path: /home/bart/backup
+      path: /backup
       state: directory
+      owner: bart
+      group: bart
+      mode: u+rwx,g=r,o-rwx
   - include_tasks: taken/play_install_pip.yml
 
   tasks:
