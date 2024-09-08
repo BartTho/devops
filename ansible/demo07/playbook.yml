@@ -9,11 +9,13 @@
       owner: bart
       group: bart
       mode: '0755'
+
   - name: Kopieer script2.py bestand en stel de rechten in
     ansible.builtin.copy:
       src: script/backup.sh
       dest: /home/bart/backup.sh
       mode: u+rwx,g+x,o+x
+
   - name: Aanmaken directory
     ansible.builtin.file:
       path: /backup
@@ -24,7 +26,7 @@
     become: yes
     become_user: root
     become_method: sudo
-  - include_tasks: taken/play_install_pip.yml
+  - include_tasks: taken/installatie_bzip2.yml
 
   tasks:
   - include_tasks: taken/play_script1.yml
