@@ -23,7 +23,7 @@
       mode: u+rwx,g=r,o-rwx
     become: yes
     become_user: root
-    become_method: su
+    become_method: sudo
   - include_tasks: taken/play_install_pip.yml
 
   tasks:
