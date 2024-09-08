@@ -1,31 +1,23 @@
 ---
 - hosts: all
   become: true
-  tasks:
+  pre_tasks:
   - name: Copy file with owner and permissions
     ansible.builtin.copy:
-      src: script1.py
+      src: script/script1.py
       dest: /home/bart/script1.py
       owner: bart
       group: bart
       mode: '0755'
-
   - name: Another symbolic mode example, adding some permissions and removing others
     ansible.builtin.copy:
-      src: script2.py
+      src: script/script2.py
       dest: /home/bart/script2.py
       mode: u+rwx,g-x,o-x
 
-  - name: Run a script using an executable in a system path
-    ansible.builtin.script: /home/bart/script1.py
-    args:
-      executable: python3
+  tasks:
+  - include: taak/play_script.yml
+  - include: taak/play_script.yml
+  
+  
 
-  - name: Install bottle python package
-    ansible.builtin.pip:
-      name: shutil
-
-  - name: Run a script using an executable in a system path
-    ansible.builtin.script: /home/bart/script2.py
-    args:
-      executable: python3
