@@ -24,7 +24,7 @@ def backup(sources, excludes, dest):
     exclude = make_predicate(excludes)
 
     for source in map(path, sources):
-        print "Backing up %s..." % source
+        print("Backing up %s..." % source)
         for fn in source.walkfiles():
             if exclude(str(fn)):
                 continue
@@ -55,7 +55,7 @@ def backup(sources, excludes, dest):
             manifest[str(fn)] = digest
             collision_check[digest] = fn # all files with the same hash will have the same contents, so only need one name
 
-    print "Writing manifest..."
+    print("Writing manifest...")
     (dest / "manifest").write_lines("%s\t%s" % (hsh, fn)
                                     for fn, hsh in sorted(manifest.items()))
 
