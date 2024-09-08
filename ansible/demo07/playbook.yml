@@ -11,9 +11,9 @@
       mode: '0755'
   - name: Kopieer script2.py bestand en stel de rechten in
     ansible.builtin.copy:
-      src: script/script2.py
-      dest: /home/bart/script2.py
-      mode: u+rwx,g-x,o-x
+      src: script/backup.py
+      dest: /home/bart/backup.py
+      mode: u+rwx,g+x,o+x
   - include_tasks: taken/play_install_pip.yml
 
   tasks:

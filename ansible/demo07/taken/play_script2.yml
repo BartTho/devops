@@ -1,7 +1,4 @@
-- name: Installeer de python bibliotheek shutil
-  ansible.builtin.pip:
-    name: shutil==0.1.0
-- name: Voer het python script uit script2.py
+- name: Voer het python script uit backup.py
   ansible.builtin.shell: 
-    cmd: python3 /home/bart/script2.py
+    cmd: python3 /home/bart/backup.py
   register: result
