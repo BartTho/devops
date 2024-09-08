@@ -14,10 +14,12 @@
       src: script/script2.py
       dest: /home/bart/script2.py
       mode: u+rwx,g-x,o-x
+  - include_tasks: taken/play_install_pip.yml
 
   tasks:
   - include_tasks: taken/play_script1.yml
   - include_tasks: taken/play_script2.yml
+
   
   
 
