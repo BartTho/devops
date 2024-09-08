@@ -8,13 +8,13 @@
       dest: /home/bart/script1.py
       owner: bart
       group: bart
-      mode: '0644'
+      mode: '0755'
 
   - name: Another symbolic mode example, adding some permissions and removing others
     ansible.builtin.copy:
       src: script2.py
       dest: /home/bart/script2.py
-      mode: u+rw,g-wx,o-rwx
+      mode: u+rwx,g-x,o-x
 
   - name: Run a script using an executable in a system path
     ansible.builtin.script: /script1.py
