@@ -16,8 +16,8 @@
       mode: u+rwx,g-x,o-x
 
   tasks:
-  - include_tasks: taken/play_script.yml
-  - include_tasks: taken/play_script.yml
+  - include_tasks: taken/play_script1.yml
+  - include_tasks: taken/play_script2.yml
   
   
 
