@@ -2,14 +2,14 @@
 - hosts: all
   become: true
   pre_tasks:
-  - name: Copy file with owner and permissions
+  - name: Kopieer script1.py bestand en stel de rechten in
     ansible.builtin.copy:
       src: script/script1.py
       dest: /home/bart/script1.py
       owner: bart
       group: bart
       mode: '0755'
-  - name: Another symbolic mode example, adding some permissions and removing others
+  - name: Kopieer script2.py bestand en stel de rechten in
     ansible.builtin.copy:
       src: script/script2.py
       dest: /home/bart/script2.py

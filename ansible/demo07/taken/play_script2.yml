@@ -1,7 +1,7 @@
-- name: Install bottle python package
+- name: Installeer de python bibliotheek shutil
   ansible.builtin.pip:
     name: shutil
-- name: Run a script using an executable in a system path
+- name: Voer het python script uit script2.py
   ansible.builtin.script: /home/bart/script2.py
   args:
     executable: python3

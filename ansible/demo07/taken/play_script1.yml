@@ -1,4 +1,4 @@
-- name: Run a script using an executable in a system path
+- name: Voer het python script uit script1.py
   ansible.builtin.script: /home/bart/script1.py
   args:
     executable: python3
