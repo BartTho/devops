@@ -16,16 +16,7 @@
       dest: /home/bart/backup.sh
       mode: u+rwx,g+x,o+x
 
-  - name: Aanmaken directory
-    ansible.builtin.file:
-      path: /backup
-      state: directory
-      owner: bart
-      group: bart
-      mode: u+rwx,g=r,o-rwx
-    become: yes
-    become_user: root
-    become_method: sudo
+  - include_tasks: taken/aanmaken_dir.yml
   - include_tasks: taken/installatie_bzip2.yml
 
   tasks:

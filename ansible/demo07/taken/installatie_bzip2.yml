@@ -3,3 +3,6 @@
     name:
       - tar
       - bzip2
+  become: yes
+  become_user: root
+  become_method: sudo
