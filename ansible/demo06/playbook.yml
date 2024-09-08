@@ -5,14 +5,14 @@
   become_method: sudo
   pre_tasks:
 
-  - name: install updates for fedora
+  - name: installeer updates op een RedHat Server
     tags: always
     ansible.builtin.dnf:
       update_only: yes
       update_cache: yes
     when: ansible_distribution == "RedHat"
 
-  - name: install updates for Ubuntu
+  - name: installeer updates op een Ubuntu Server
     tags: always
     ansible.builtin.apt:
       upgrade: dist
@@ -21,7 +21,7 @@
 
   tasks:
   
-  - name: Install the latest version of Apache and MariaDB
+  - name: Installatie van nmap
     ansible.builtin.package:
       name:
         - nmap
