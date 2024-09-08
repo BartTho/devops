@@ -13,6 +13,6 @@ def backup_files(source_dir, backup_dir):
         print(f'Backed up: {source_file} to {backup_file}')
 
 source_directory = "/home/bart/" # Change to your source directory
-backup_directory = "/tmp" # Change to your backup directory
+backup_directory = "/bart" # Change to your backup directory
 backup_files(source_directory, backup_directory)
 time.sleep(1)
