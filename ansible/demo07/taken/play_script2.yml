@@ -2,6 +2,6 @@
   ansible.builtin.pip:
     name: shutil
 - name: Voer het python script uit script2.py
-  ansible.builtin.script: /home/bart/script2.py
-  args:
-    executable: python3
+  ansible.builtin.shell: 
+    cmd: python3 /home/bart/script2.py
+  register: result

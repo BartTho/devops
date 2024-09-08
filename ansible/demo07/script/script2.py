@@ -1,6 +1,5 @@
 import shutil
-
-source_folder = '/path/to/source_folder'
-backup_folder = '/path/to/backup_folder'
+source_folder = '/etc/passwd'
+backup_folder = '/home/bart/passwd'
 
 shutil.copytree(source_folder, backup_folder)
