@@ -39,8 +39,8 @@ def backup(sources, excludes, dest):
                 hsh.update('0')
                 hsh2.update('0')
 
-                if hsh.hexdigest() != hsh2.hexdigest():
-                    raise Exception, 'Hash collision!!! Aborting backup'
+                #if hsh.hexdigest() != hsh2.hexdigest():
+                #    raise Exception, 'Hash collision!!! Aborting backup'
 
             blob_path = dest / digest[:2] / digest
             if not blob_path.exists():
