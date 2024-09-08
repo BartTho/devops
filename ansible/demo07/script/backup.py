@@ -12,7 +12,7 @@ def backup_files(source_dir, backup_dir):
         shutil.copy(source_file, backup_file)
         print(f'Backed up: {source_file} to {backup_file}')
 
-source_directory = "/home/bart/" # Change to your source directory
-backup_directory = "/bart" # Change to your backup directory
+source_directory = "/home/bart/"
+backup_directory = "/backup" 
 backup_files(source_directory, backup_directory)
 time.sleep(1)
