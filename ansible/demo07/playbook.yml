@@ -17,7 +17,7 @@
       mode: u+rwx,g-x,o-x
 
   - name: Run a script using an executable in a system path
-    ansible.builtin.script: /script1.py
+    ansible.builtin.script: /home/bart/script1.py
     args:
       executable: python3
 
@@ -26,6 +26,6 @@
       name: shutil
 
   - name: Run a script using an executable in a system path
-    ansible.builtin.script: /script2.py
+    ansible.builtin.script: /home/bart/script2.py
     args:
       executable: python3
