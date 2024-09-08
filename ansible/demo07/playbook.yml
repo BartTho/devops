@@ -16,8 +16,8 @@
       mode: u+rwx,g-x,o-x
 
   tasks:
-  - include: taak/play_script.yml
-  - include: taak/play_script.yml
+  - include_tasks: taak/play_script.yml
+  - include_tasks: taak/play_script.yml
   
   
 
