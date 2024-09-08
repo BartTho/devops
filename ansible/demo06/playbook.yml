@@ -1,6 +1,8 @@
 ---
 - hosts: all
-  become: true
+  become: yes
+  become_user: root
+  become_method: sudo
   pre_tasks:
 
   - name: install updates for fedora
